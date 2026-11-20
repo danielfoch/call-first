@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Call First — Settings</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="wrap"><div class="card">
+  <h1>Call First settings</h1>
+  <p class="sub">Your token stays in this browser (chrome.storage.local) and is only sent to services.leadconnectorhq.com. Read-only use.</p>
+
+  <h2>GoHighLevel connection</h2>
+  <label for="token">Private Integration token</label>
+  <input id="token" type="password" autocomplete="off" placeholder="pit-…">
+  <div class="hint">GHL sub-account → Settings → Private Integrations → Create. Scope needed: <code>conversations/message.readonly</code> (plus <code>conversations.readonly</code>).</div>
+  <label for="locationId">Location (sub-account) ID</label>
+  <input id="locationId" type="text" autocomplete="off">
+  <div class="hint">Settings → Business Profile, or the ID in your GHL URL after <code>/location/</code>.</div>
+  <label for="userId">Only count calls by GHL user ID (optional)</label>
+  <input id="userId" type="text" autocomplete="off" placeholder="leave blank to count any user in the location">
+  <label for="ghlAppUrl">GHL app URL (for the “Open GHL” button)</label>
+  <input id="ghlAppUrl" type="text" placeholder="https://app.gohighlevel.com">
+  <div class="row" style="margin-top:14px"><button id="test" class="btn secondary">Test connection</button></div>
+  <div id="testMsg" class="msg"></div>
+
+  <h2>Rules</h2>
+  <label for="sites">Blocked sites (one domain per line; subdomains included)</label>
+  <textarea id="sites"></textarea>
+  <label for="unlockMinutes">Unlock window (minutes)</label>
+  <input id="unlockMinutes" type="number" min="1" max="480">
+  <label for="minCallSeconds">Minimum call length (seconds, 0 = any outbound call)</label>
+  <input id="minCallSeconds" type="number" min="0" max="3600">
+  <label class="check"><input id="requireConnected" type="checkbox"> Only count connected calls (status “completed”)</label>
+  <label class="check"><input id="emergencySkip" type="checkbox"> Allow one emergency skip per day</label>
+  <label class="check"><input id="enabled" type="checkbox"> Blocking enabled</label>
+
+  <div class="row" style="margin-top:20px">
+    <button id="save" class="btn primary">Save</button>
+    <button id="relock" class="btn ghost">Re-lock now</button>
+  </div>
+  <div id="msg" class="msg"></div>
+</div></div>
+<script type="module" src="options.js"></script></body></html>

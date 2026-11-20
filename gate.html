@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Call First</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="wrap"><div class="card">
+  <h1>📞 Call first.</h1>
+  <p class="sub">This site is locked. Make <b>one outbound call</b> from your CRM (GoHighLevel), then come back and check in.</p>
+  <div class="stats">
+    <div class="stat"><b id="callsToday">–</b><span>outbound calls today</span></div>
+    <div class="stat"><b id="unlocksToday">–</b><span>unlocks earned today</span></div>
+  </div>
+  <div class="row">
+    <a id="openGhl" class="btn secondary" href="https://app.gohighlevel.com" target="_blank" rel="noopener">Open GHL</a>
+    <button id="check" class="btn primary">I made my call — check</button>
+  </div>
+  <div id="msg" class="msg"></div>
+  <div class="row" style="margin-top:20px">
+    <button id="skip" class="btn ghost" hidden>Emergency skip (once per day)</button>
+    <a href="options.html" class="btn ghost" target="_blank">Settings</a>
+  </div>
+  <div id="since" class="from"></div>
+  <div id="from" class="from"></div>
+</div></div>
+<script type="module" src="gate.js"></script></body></html>
